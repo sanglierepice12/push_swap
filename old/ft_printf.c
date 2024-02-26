@@ -12,15 +12,17 @@
 
 #include "pushswap.h"
 
-int	ft_format_arg(char type, va_list args)
+static int	ft_format_arg(char type, va_list args)
 {
 	if (type == 'c')
 		return (ft_putchar(va_arg(args, int)));
 	if (type == 's')
 		return (ft_putstr(1, va_arg(args, char *)));
-	if (type == 'p')
-		return (0);
-	return (printf("pas le bon suivant"), -1);
+	if (type == 'd' || type == 'i')
+		return (ft_print_nb(va_arg(args, int), "0123456789"));
+	if (type == 'u')
+		return (ft_print_nb(va_arg(args, unsigned long), "0123456789"));
+	return (ft_error(), -1);
 }
 
 int	ft_printf(char *str, ...)
@@ -43,10 +45,10 @@ int	ft_printf(char *str, ...)
 	return (va_end(args), len);
 }
 
-int	main(int arc, char **argv)
+/*int	main(int arc, char **argv)
 {
 	if (arc < 2)
-		return (printf("pas assez d'arguments\n"), 0);
+		return (ft_printf("pas assez d'arguments\n"), 0);
 	ft_printf("%s", argv[1]);
 	return (0);
-}
+}*/

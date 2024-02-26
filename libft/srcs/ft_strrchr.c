@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodes.c                                            :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsuter <gostr@student.42.fr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/15 16:25:12 by gsuter            #+#    #+#             */
-/*   Updated: 2024/02/15 16:25:12 by gsuter           ###   ########.fr       */
+/*   Created: 2024/02/26 16:52:45 by gsuter            #+#    #+#             */
+/*   Updated: 2024/02/26 16:52:45 by gsuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pushswap.h"
+#include "../incs/libft.h"
 
-t_struct *ft_new_node(int *content)
+char	*ft_strrchr(const char *s, int c)
 {
-	t_struct	*head;
+	size_t	i;
+	char	*last;
 
-	head = malloc(sizeof(t_struct));
-	if (!head)
-		return (NULL);
-	head->content = *content;
-	head->next = head;
-	head->prev = head;
-	return (head);
-}
-
-size_t	ft_count_nodes(t_struct **head)
-{
-
+	i = 0;
+	last = NULL;
+	while (s[i])
+	{
+		if (s[i] == (unsigned char) c)
+			last = &((char *) s)[i];
+		i++;
+	}
+	if ((unsigned char) c == 0)
+		last = &((char *) s)[i];
+	return (last);
 }
