@@ -12,14 +12,15 @@
 
 #include "../includes/push_swap.h"
 
+#include <stdio.h>
 int	main(int arc, char **argv)
 {
 	t_struct	*a;
-	t_struct	*b;
+	//t_struct	*b;
 
 	if (arc < 2)
 		return (0);
 	if (arc == 2)
-		a = ft_parse(argv[1]);
+		a = ft_parse(argv[1], &a);
 	return (0);
 }

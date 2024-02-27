@@ -20,13 +20,17 @@ typedef	struct s_struct
 	int	content;
 	struct s_struct *next;
 	struct s_struct *prev;
-}t_struct;
+}	t_struct;
 
 //PARSE
-t_struct	*ft_parse(char *str);
+t_struct	*ft_parse(char *str, t_struct	**a);
 void		ft_error(void);
 
 //ATOL
 long	ft_atol(const char *nptr);
+
+//NODES
+t_struct	*ft_new_node(int content);
+void	ft_node_add_back(t_struct **lst, t_struct *new);
 
 #endif

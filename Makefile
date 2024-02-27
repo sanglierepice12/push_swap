@@ -1,5 +1,8 @@
 SRCS	=	push_swap.c				\
-
+			ft_atol.c				\
+			ft_write.c				\
+			nodes.c					\
+			parsing.c
 OBJS	=	$(SRCS:%.c=${OBJ_D}%.o)
 
 SRC_D	=	srcs/
