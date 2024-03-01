@@ -12,7 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-#include <stdio.h>
 int	main(int arc, char **argv)
 {
 	t_struct	*a;
