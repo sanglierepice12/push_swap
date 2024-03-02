@@ -23,6 +23,7 @@ typedef	struct s_struct
 }	t_struct;
 
 //PARSE
+t_struct	*ft_parse_to_node(char **str, t_struct **a);
 t_struct	*ft_parse(char *str, t_struct	**a);
 void		ft_error(void);
 
@@ -35,4 +36,8 @@ t_struct	*ft_new_node(int content);
 void		ft_node_add_back(t_struct **lst, t_struct *new);
 void		print_lst(t_struct **head);
 void	free_lst(t_struct **head);
+
+//UTILS
+int	ft_search_space(char *str);
+
 #endif

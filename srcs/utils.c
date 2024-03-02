@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsuter <gsuter@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/26 17:05:09 by gsuter            #+#    #+#             */
-/*   Updated: 2024/02/26 17:05:09 by gsuter           ###   ########.fr       */
+/*   Created: 2024/03/02 11:55:05 by gsuter            #+#    #+#             */
+/*   Updated: 2024/03/02 11:55:05 by gsuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	main(int arc, char **argv)
+int	ft_search_space(char *str)
 {
-	t_struct	*a;
-	//t_struct	*b;
+	size_t	i;
 
-	if (arc < 2)
-		return (0);
-	if (arc == 2)
-		a = ft_parse(argv[1], &a);
-	else
-		a = ft_parse_to_node(argv + 1, &a);
-	print_lst(&a);
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] == 32)
+			return (1);
+		else if (!ft_isdigit(str[i]))
+			ft_error();
+		i++;
+	}
 	return (0);
 }

@@ -14,7 +14,15 @@
 
 void	free_lst(t_struct **head)
 {
+	t_struct	*temp;
 
+	while (*head)
+	{
+		temp = (*head)->next;
+		(*head)->content = 0;
+		free(*head);
+		*head = temp;
+	}
 }
 
 void	print_lst(t_struct **head)
@@ -31,6 +39,7 @@ void	print_lst(t_struct **head)
 		i++;
 	}
 	printf("Elem n'%zu: %d\n", i, temp->content);
+	free_lst(head);
 }
 
 t_struct	*ft_new_node(int content)

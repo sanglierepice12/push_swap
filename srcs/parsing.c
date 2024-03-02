@@ -35,24 +35,37 @@ void ft_check(char **tab)
 	}
 }
 
+t_struct	*ft_parse_to_node(char **str, t_struct **a)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_search_space(str[i]))
+			str[i] =
+		i++;
+	}
+	printf("coucou");
+	i = 0;
+	*a = ft_new_node(ft_atoi(str[i]));
+	while(++i, str[i])
+		ft_node_add_back(a, ft_new_node(ft_atoi(str[i])));
+	return (*a);
+}
+
 t_struct	*ft_parse(char *str, t_struct	**a)
 {
 	char		**dest;
-	size_t		i;
 
 	dest = ft_split(str, 32);
 	if (!dest)
 		return (ft_error(), NULL);
 	ft_check(dest);
-	i = 0;
-	*a = ft_new_node(ft_atoi(dest[i]));
-	while(++i, dest[i])
-		ft_node_add_back(a, ft_new_node(ft_atoi(dest[i])));
-	print_lst(a);
+	*a = ft_parse_to_node(dest, a);
 	return (*a);
 }
 
-// je atoi(dest[0]) = t_struct a->content;
 // algo
 // mes printfs d operation
 // free all
