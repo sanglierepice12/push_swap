@@ -20,6 +20,6 @@ int	main(/*int arc, char **argv*/)
 	/*if (arc < 2)
 		return (0);
 	if (arc == 2)*/
-		a = ft_parse("22", &a);
+		a = ft_parse("22 55 44", &a);
 	return (0);
 }

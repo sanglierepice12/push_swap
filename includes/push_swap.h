@@ -34,4 +34,5 @@ t_struct	*ft_node_last(t_struct *head);
 t_struct	*ft_new_node(int content);
 void		ft_node_add_back(t_struct **lst, t_struct *new);
 void		print_lst(t_struct **head);
+void	free_lst(t_struct **head);
 #endif

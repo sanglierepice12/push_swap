@@ -12,6 +12,11 @@
 
 #include "../includes/push_swap.h"
 
+void	free_lst(t_struct **head)
+{
+
+}
+
 void	print_lst(t_struct **head)
 {
 	t_struct	*temp;
@@ -19,7 +24,7 @@ void	print_lst(t_struct **head)
 
 	i = 0;
 	temp = *head;
-	while (temp->next != *head)
+	while (temp->next)
 	{
 		printf("Elem n'%zu: %d\n", i, temp->content);
 		temp = temp->next;
@@ -36,7 +41,7 @@ t_struct	*ft_new_node(int content)
 	if (!new)
 		return (NULL);
 	new->content = content;
-	new->next = new;
+	new->next = NULL;
 	/*new->prev = new;*/
 	return (new);
 }

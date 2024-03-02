@@ -45,14 +45,10 @@ t_struct	*ft_parse(char *str, t_struct	**a)
 		return (ft_error(), NULL);
 	ft_check(dest);
 	i = 0;
-	while(dest[i])
-	{
+	*a = ft_new_node(ft_atoi(dest[i]));
+	while(++i, dest[i])
 		ft_node_add_back(a, ft_new_node(ft_atoi(dest[i])));
-		//printf("temp->content[%zu] = %d\n", i, temp->content);
-		i++;
-	}
-	printf("coucou");
-	//print_lst(a);
+	print_lst(a);
 	return (*a);
 }
 

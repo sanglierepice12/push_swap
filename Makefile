@@ -15,7 +15,7 @@ NAME	=	push_swap
 
 CC		=	cc
 
-FLAGS	=	-Wall -Wextra -Werror -Iincludes
+FLAGS	=	-Wall -Wextra -Werror -Iincludes -g
 
 all		:
 	@make --no-print-directory bonus -C libft/
