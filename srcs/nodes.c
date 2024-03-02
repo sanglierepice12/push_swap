@@ -12,6 +12,22 @@
 
 #include "../includes/push_swap.h"
 
+void	print_lst(t_struct **head)
+{
+	t_struct	*temp;
+	size_t	i;
+
+	i = 0;
+	temp = *head;
+	while (temp->next != *head)
+	{
+		printf("Elem n'%zu: %d\n", i, temp->content);
+		temp = temp->next;
+		i++;
+	}
+	printf("Elem n'%zu: %d\n", i, temp->content);
+}
+
 t_struct	*ft_new_node(int content)
 {
 	t_struct	*new;
@@ -21,32 +37,34 @@ t_struct	*ft_new_node(int content)
 		return (NULL);
 	new->content = content;
 	new->next = new;
-	new->prev = new;
+	/*new->prev = new;*/
 	return (new);
 }
 
-t_struct	*ft_node_last(t_struct *lst)
+t_struct	*ft_node_last(t_struct *head)
 {
 	t_struct	*temp;
 
-	if (!lst)
+	if (!head)
 		return (0);
-	temp = lst;
+	temp = head;
 	while (temp->next)
 		temp = temp->next;
 	return (temp);
 }
 
-void	ft_node_add_back(t_struct **head, t_struct *node)
+void	ft_node_add_back(t_struct **head, t_struct *new)
 {
-	if (!node)
-		return;
+	t_struct	*last;
+
 	if (*head)
 	{
-		node->next = *head;
-		node->prev = (*head)->prev;
-		(*head)->prev->next = node;
-		(*head)->prev = node;
+		last = ft_node_last(*head);
+		last->next = new;
+		/*new->prev = last;
+		new->prev->next = *head;
+		(*head)->prev = new;*/
 	}
-	(*head) = node;
+	else
+		*head = new;
 }

@@ -35,27 +35,10 @@ void ft_check(char **tab)
 	}
 }
 
-void	print_lst(t_struct **head)
-{
-	t_struct	*temp;
-	size_t	i;
-
-	i = 0;
-	temp = *head;
-	while (temp->next != *head)
-	{
-		printf("Elem n'%zu: %d\n", i, temp->content);
-		temp = temp->next;
-		i++;
-	}
-	printf("Elem n'%zu: %d\n", i, temp->content);
-}
-
 t_struct	*ft_parse(char *str, t_struct	**a)
 {
 	char		**dest;
 	size_t		i;
-	t_struct	*temp;
 
 	dest = ft_split(str, 32);
 	if (!dest)
@@ -64,19 +47,12 @@ t_struct	*ft_parse(char *str, t_struct	**a)
 	i = 0;
 	while(dest[i])
 	{
-		temp = ft_new_node(ft_atoi(dest[i]));
-		ft_node_add_back(a, temp);
-		printf("dest[%zu] = %d\n", i, (*a)->content);
+		ft_node_add_back(a, ft_new_node(ft_atoi(dest[i])));
+		//printf("temp->content[%zu] = %d\n", i, temp->content);
 		i++;
 	}
-	print_lst(a);
-	/*temp = *a;
-	temp->prev->next = NULL;
-	while (temp)
-	{
-		printf("next-> %d\n", temp->content);
-		temp = temp->next;
-	}*/
+	printf("coucou");
+	//print_lst(a);
 	return (*a);
 }
 

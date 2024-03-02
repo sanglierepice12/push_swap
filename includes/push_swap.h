@@ -19,7 +19,7 @@ typedef	struct s_struct
 {
 	int	content;
 	struct s_struct *next;
-	struct s_struct *prev;
+	//struct s_struct *prev;
 }	t_struct;
 
 //PARSE
@@ -27,10 +27,11 @@ t_struct	*ft_parse(char *str, t_struct	**a);
 void		ft_error(void);
 
 //ATOL
-long	ft_atol(const char *nptr);
+long		ft_atol(const char *nptr);
 
 //NODES
+t_struct	*ft_node_last(t_struct *head);
 t_struct	*ft_new_node(int content);
-void	ft_node_add_back(t_struct **lst, t_struct *new);
-
+void		ft_node_add_back(t_struct **lst, t_struct *new);
+void		print_lst(t_struct **head);
 #endif
