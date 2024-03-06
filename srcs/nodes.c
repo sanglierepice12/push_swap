@@ -49,6 +49,7 @@ t_struct	*ft_new_node(int content)
 	new = malloc(sizeof(t_struct));
 	if (!new)
 		return (NULL);
+	//bezero
 	new->content = content;
 	new->next = NULL;
 	/*new->prev = new;*/

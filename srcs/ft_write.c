@@ -15,5 +15,6 @@
 void	ft_error(void)
 {
 	ft_putstr_fd("Error\n", 2);
+	//if truc free truc
 	exit(1);
 }

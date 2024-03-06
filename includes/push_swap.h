@@ -17,7 +17,8 @@
 #include <stdio.h>
 typedef	struct s_struct
 {
-	int	content;
+	int		content;
+	int 	rank;
 	struct s_struct *next;
 	//struct s_struct *prev;
 }	t_struct;
@@ -39,8 +40,10 @@ void		ft_node_add_back(t_struct **lst, t_struct *new);
 void		print_lst(t_struct **head);
 void		free_lst(t_struct **head);
 
-//UTILS
-int		ft_search_space(char *str);
-void	check_double(t_struct **a);
+//check
+void		ft_search_space(char **str);
+void		check_double(t_struct **a);
+void		ft_check_all_is_numbers(char **tab);
+void		ft_double_fc(char **str);
 
 #endif

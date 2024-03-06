@@ -1,47 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   rules_swap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gsuter <gsuter@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/02 11:55:05 by gsuter            #+#    #+#             */
-/*   Updated: 2024/03/02 11:55:05 by gsuter           ###   ########.fr       */
+/*   Created: 2024/03/06 16:49:15 by gsuter            #+#    #+#             */
+/*   Updated: 2024/03/06 16:49:15 by gsuter           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-int	ft_search_space(char *str)
+void	sa(t_struct **a)
 {
-	size_t	i;
+	t_struct	temp;
 
-	i = 0;
-	while (str[i])
+	if ((*a) && (*a)->next)
 	{
-		if (str[i] == 32)
-			return (1);
-		else if (!ft_isdigit(str[i]))
-			ft_error();
-		i++;
+		temp = (*a);
+		(*a) = (*a)->next;
+		(*a)->next = temp;
 	}
-	return (0);
+	ft_printf("sa\n");
 }
 
-void	check_double(t_struct **a)
+void	sb(t_struct **b)
 {
-	t_struct	*temp;
+	int	temp;
 
-	if (!(*a)->next)
-		return;
-	else
+	if ((*b) && (*b)->next)
 	{
-		temp = *a;
-		while (temp->next)
-		{
-			temp = temp->next;
-			if (temp->content == (*a)->content)
-				ft_error();
-		}
+		temp = (*b);
+		(*b) = (*b)->next;
+		(*b)->next = temp;
 	}
+	ft_printf("")
+}
+
+void	ss(t_struct **a,t_struct **b)
+{
+	sa(a);
+	sb(b);
 }
