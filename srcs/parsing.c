@@ -40,17 +40,11 @@ t_struct	*ft_parse_to_node(char **str, t_struct **a)
 	size_t	i;
 
 	i = 0;
-	while (str[i])
-	{
-		if (ft_search_space(str[i]))
-			str[i] =
-		i++;
-	}
-	printf("coucou");
-	i = 0;
+	ft_check(str);
 	*a = ft_new_node(ft_atoi(str[i]));
 	while(++i, str[i])
 		ft_node_add_back(a, ft_new_node(ft_atoi(str[i])));
+	check_double(a);
 	return (*a);
 }
 
@@ -61,7 +55,6 @@ t_struct	*ft_parse(char *str, t_struct	**a)
 	dest = ft_split(str, 32);
 	if (!dest)
 		return (ft_error(), NULL);
-	ft_check(dest);
 	*a = ft_parse_to_node(dest, a);
 	return (*a);
 }

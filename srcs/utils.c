@@ -27,3 +27,21 @@ int	ft_search_space(char *str)
 	}
 	return (0);
 }
+
+void	check_double(t_struct **a)
+{
+	t_struct	*temp;
+
+	if (!(*a)->next)
+		return;
+	else
+	{
+		temp = *a;
+		while (temp->next)
+		{
+			temp = temp->next;
+			if (temp->content == (*a)->content)
+				ft_error();
+		}
+	}
+}

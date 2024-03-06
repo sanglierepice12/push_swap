@@ -15,14 +15,23 @@
 int	main(int arc, char **argv)
 {
 	t_struct	*a;
-	//t_struct	*b;
+/*	t_struct	*b;*/
 
-	if (arc < 2)
+	a = NULL;
+/*	b = NULL;*/
+	if (arc < 2 || (arc == 2 && !argv[1][0]))
 		return (0);
 	if (arc == 2)
 		a = ft_parse(argv[1], &a);
 	else
 		a = ft_parse_to_node(argv + 1, &a);
+	//check si a est sorted ou pas
+	// si non -> check si = 2
+	// 				then swap a
+	// check si = 3
+	// 				check biggest nb at the top / middle / bot
+	//				do what you have to do brow
+	// check si plus ducoup turckish
 	print_lst(&a);
 	return (0);
 }

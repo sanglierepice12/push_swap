@@ -22,9 +22,11 @@ typedef	struct s_struct
 	//struct s_struct *prev;
 }	t_struct;
 
-//PARSE
+//PARSING
 t_struct	*ft_parse_to_node(char **str, t_struct **a);
 t_struct	*ft_parse(char *str, t_struct	**a);
+
+//WRITE ERROR
 void		ft_error(void);
 
 //ATOL
@@ -35,9 +37,10 @@ t_struct	*ft_node_last(t_struct *head);
 t_struct	*ft_new_node(int content);
 void		ft_node_add_back(t_struct **lst, t_struct *new);
 void		print_lst(t_struct **head);
-void	free_lst(t_struct **head);
+void		free_lst(t_struct **head);
 
 //UTILS
-int	ft_search_space(char *str);
+int		ft_search_space(char *str);
+void	check_double(t_struct **a);
 
 #endif
