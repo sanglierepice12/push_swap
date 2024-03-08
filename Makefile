@@ -3,7 +3,9 @@ SRCS	=	push_swap.c				\
 			ft_write.c				\
 			nodes.c					\
 			parsing.c				\
-			check.c
+			check.c					\
+			rules_swap.c			\
+			rules_push.c
 
 OBJS	=	$(SRCS:%.c=${OBJ_D}%.o)
 

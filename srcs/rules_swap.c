@@ -12,34 +12,42 @@
 
 #include "../includes/push_swap.h"
 
-void	sa(t_struct **a)
+void	sa(t_struct **a, int flag)
 {
-	t_struct	temp;
+	t_struct	*temp;
 
-	if ((*a) && (*a)->next)
+	if (*a && (*a)->next)
 	{
-		temp = (*a);
-		(*a) = (*a)->next;
-		(*a)->next = temp;
+		temp = (*a)->next;
+		(*a)->next = temp->next;
+		temp->next = *a;
+		*a = temp;
+		if (flag == 1)
+			ft_printf("sa\n");
 	}
-	ft_printf("sa\n");
 }
 
-void	sb(t_struct **b)
+void	sb(t_struct **b, int flag)
 {
-	int	temp;
+	t_struct	*temp;
 
 	if ((*b) && (*b)->next)
 	{
-		temp = (*b);
-		(*b) = (*b)->next;
-		(*b)->next = temp;
+		temp = (*b)->next;
+		(*b)->next = temp->next;
+		temp->next = *b;
+		*b = temp;
+		if (flag == 1)
+			ft_printf("sb\n");
 	}
-	ft_printf("")
 }
 
-void	ss(t_struct **a,t_struct **b)
+void	ss(t_struct **a, t_struct **b)
 {
-	sa(a);
-	sb(b);
+	if ((*a && *b) && ((*a)->next && (*b)->next))
+	{
+		sa(a, 0);
+		sb(b, 0);
+		ft_printf("ss\n");
+	}
 }
