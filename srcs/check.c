@@ -63,12 +63,11 @@ void	check_double(t_struct **a)
 		doz = *a;
 		while(doz->next)
 		{
-			temp = *a;
-			while (temp->next)
+			temp = doz->next;
+			while (temp)
 			{
-
 				//printf("a content = %d\n", (*a)->content);
-				if (temp->content == doz->content && temp != doz)
+				if (temp->content == doz->content)
 					ft_error();
 				temp = temp->next;
 			}

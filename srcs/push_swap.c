@@ -25,6 +25,7 @@ int	main(int arc, char **argv)
 		a = ft_parse(argv[1], &a);
 	else
 		a = ft_parse_to_node(argv + 1, &a);
+
 	//check si a est sorted ou pas
 	// si non -> check si = 2
 	// 				then swap a
