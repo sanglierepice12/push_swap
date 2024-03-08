@@ -49,10 +49,13 @@ void		ft_check_all_is_numbers(char **tab);
 void		ft_double_fc(char **str);
 
 //RULES
-void	sa(t_struct **a, int flag);
-void	sb(t_struct **b, int flag);
-void	ss(t_struct **a,t_struct **b);
-void	pa(t_struct **a, t_struct **b);
-void	pb(t_struct **a, t_struct **b);
+void		sa(t_struct **a, int flag);
+void		sb(t_struct **b, int flag);
+void		ss(t_struct **a,t_struct **b);
+void		pa(t_struct **a, t_struct **b);
+void		pb(t_struct **a, t_struct **b);
+void		ra(t_struct **a, int flag);
+void		rb(t_struct **b, int flag);
+void		rr(t_struct **a, t_struct **b);
 
 #endif

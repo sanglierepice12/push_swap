@@ -22,7 +22,7 @@ void	pa(t_struct **a, t_struct **b)
 		*b = (*b)->next;
 		temp->next = *a;
 		*a = temp;
-		ft_printf("pa");
+		ft_printf("pa\n");
 	}
 }
 
@@ -36,6 +36,6 @@ void	pb(t_struct **a, t_struct **b)
 		*a = (*a)->next;
 		temp->next = *b;
 		*b = temp;
-		ft_printf("pb");
+		ft_printf("pb\n");
 	}
 }

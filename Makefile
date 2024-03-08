@@ -5,7 +5,8 @@ SRCS	=	push_swap.c				\
 			parsing.c				\
 			check.c					\
 			rules_swap.c			\
-			rules_push.c
+			rules_push.c			\
+			rules_rotate.c
 
 OBJS	=	$(SRCS:%.c=${OBJ_D}%.o)
 

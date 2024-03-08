@@ -25,25 +25,10 @@ int	main(int arc, char **argv)
 		a = ft_parse(argv[1], &a);
 	else
 		a = ft_parse_to_node(argv + 1, &a);
-
-	/*printf("a\n");
-	print_lst(&a);*/
-	/*printf("\n");
-	printf("b\n");
-	print_lst(&b);*/
-	/*printf("\n");*/
+	
+	/*-------TESTERS------*/
 	pb(&a, &b);
 	pb(&a, &b);
-	pb(&a, &b);
-	printf("\n");
-	printf("a\n");
-	print_lst(&a);
-	printf("\n");
-	printf("b\n");
-	print_lst(&b);
-	pa(&a, &b);
-	pa(&a, &b);
-	pa(&a, &b);
 	printf("\n");
 	printf("a\n");
 	print_lst(&a);
