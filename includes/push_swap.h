@@ -20,7 +20,7 @@ typedef	struct s_struct
 	int		content;
 	int 	rank;
 	struct s_struct *next;
-	struct s_struct *other_next;
+	struct s_struct *prev;
 	//struct s_struct *prev;
 }	t_struct;
 
@@ -57,5 +57,8 @@ void		pb(t_struct **a, t_struct **b);
 void		ra(t_struct **a, int flag);
 void		rb(t_struct **b, int flag);
 void		rr(t_struct **a, t_struct **b);
+void		rra(t_struct **a, int flag);
+void		rrb(t_struct **b, int flag);
+void		rrr(t_struct **a, t_struct **b);
 
 #endif

@@ -39,5 +39,4 @@ t_struct	*ft_parse(char *str, t_struct	**a)
 }
 
 // algo
-// mes printfs d operation
 // free all
