@@ -45,6 +45,8 @@ int	main(int arc, char **argv)
 	print_lst(&a);
 	printf("liste b\n");
 	print_lst(&b);
+	node_size(&a);
+	node_size(&b);
 	return (0);
 }
 

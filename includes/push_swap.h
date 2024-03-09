@@ -20,8 +20,6 @@ typedef	struct s_struct
 	int		content;
 	int 	rank;
 	struct s_struct *next;
-	struct s_struct *prev;
-	//struct s_struct *prev;
 }	t_struct;
 
 //PARSING
@@ -41,6 +39,7 @@ void		ft_node_add_back(t_struct **lst, t_struct *new);
 void		print_lst(t_struct **head);
 void		free_lst(t_struct **head);
 void		ft_node_add_front(t_struct **lst, t_struct *new);
+size_t		node_size(t_struct **a);
 
 //check
 void		ft_search_space(char **str);
@@ -60,5 +59,8 @@ void		rr(t_struct **a, t_struct **b);
 void		rra(t_struct **a, int flag);
 void		rrb(t_struct **b, int flag);
 void		rrr(t_struct **a, t_struct **b);
+
+//SORT
+void		ranking(t_struct **stack);
 
 #endif

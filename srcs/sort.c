@@ -12,7 +12,30 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_rank(t_struct **a)
+void	ranking(t_struct **stack)
 {
+	t_struct	*lst;
+	size_t		i;
+	int		temp_content;
+	int		temp;
 
+	lst = *stack;
+	i = 0;
+	temp = -2147483648;
+	while (i < node_size(stack))
+	{
+		lst = *stack;
+		temp_content = 2147483647;
+		while (lst)
+		{
+			if ((lst->content <= temp_content) && (lst->content > temp || i == 0))
+			{
+				lst->rank = i;
+				temp_content = lst->content;
+			}
+			lst = lst->next;
+		}
+		i++;
+		temp = temp_content;
+	}
 }

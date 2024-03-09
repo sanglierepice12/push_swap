@@ -12,25 +12,6 @@
 
 #include "../includes/push_swap.h"
 
-/*void	ft_double_fc(char *str)
-{
-	size_t	i;
-	size_t	j;
-
-	i = 0;
-	while (str[i])
-	{
-		j = 1;
-		while (str[j])
-		{
-			if (str[i] == str[j])
-				ft_error();
-			j++;
-		}
-		i++;
-	}
-}*/
-
 void	ft_search_space(char **str)
 {
 	size_t	i;
@@ -56,7 +37,7 @@ void	check_double(t_struct **a)
 	t_struct	*temp;
 	t_struct	*doz;
 
-	if (!(*a)->next)
+	if (!(*a)->next || !(*a))
 		return;
 	else
 	{
@@ -66,7 +47,6 @@ void	check_double(t_struct **a)
 			temp = doz->next;
 			while (temp)
 			{
-				//printf("a content = %d\n", (*a)->content);
 				if (temp->content == doz->content)
 					ft_error();
 				temp = temp->next;

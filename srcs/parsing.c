@@ -22,6 +22,7 @@ t_struct	*ft_parse_to_node(char **str, t_struct **a)
 	while(++i, str[i])
 		ft_node_add_back(a, ft_new_node(ft_atoi(str[i])));
 	check_double(a);
+	ranking(a);
 	return (*a);
 }
 
