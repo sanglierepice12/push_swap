@@ -18,20 +18,15 @@ void	rra(t_struct **a, int flag)
 
 	if (*a && (*a)->next)
 	{
-		/*temp = ft_node_last(*a)->prev;
-		(*a) = temp->next;
+		temp = ft_node_last(*a)->prev;
+		*a = temp->next;
 		temp->next = NULL;
 		while (temp->prev)
 			temp = temp->prev;
-		(*a)->next = temp;*/
-		temp = (*a);
-		while (temp->next->next)
-			temp = temp->next;
-		temp->next->next = (*a);
-		(*a) = temp->next;
-		temp->next = NULL;
+		(*a)->next = temp;
+		(*a)->prev = NULL;
 		if (flag)
-			ft_printf("rra");
+			ft_printf("rra\n");
 	}
 }
 
@@ -42,20 +37,24 @@ void	rrb(t_struct **b, int flag)
 
 	if (*b && (*b)->next)
 	{
-		temp = (*b);
-		while (temp->next->next)
-			temp = temp->next;
-		temp->next->next = (*b);
-		(*b) = temp->next;
+		temp = ft_node_last(*b)->prev;
+		*b = temp->next;
 		temp->next = NULL;
+		while (temp->prev)
+			temp = temp->prev;
+		(*b)->next = temp;
+		(*b)->prev = NULL;
 		if (flag)
-			ft_printf("rrb");
+			ft_printf("rrb\n");
 	}
-
 }
 
 void	rrr(t_struct **a, t_struct **b)
 {
-	rra(a, 0);
-	rrb(b, 0);
+	if ((*a && (*a)->next) && (*b && (*b)->next))
+	{
+		rra(a, 0);
+		rrb(b, 0);
+		ft_printf("rrr\n");
+	}
 }

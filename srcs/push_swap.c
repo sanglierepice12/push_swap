@@ -28,27 +28,32 @@ int	main(int arc, char **argv)
 
 	/*-------TESTERS------*/
 
-	/*pb(&a,&b);
+	printf("------BASE------\n");
+	printf("liste a\n");
+	print_lst(&a);
+	printf("\n");
+	printf("liste b\n");
+	print_lst(&b);
+
+
+	pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
+	pb(&a, &b);
 	pb(&a, &b);
 
-	rra(&a, 1);
-	rrb(&a, 1);
-	printf("liste a\n");
-	print_lst(&a);
-	printf("\n");*/
-	printf("liste b\n");
-	print_lst(&b);
 
-/*	rrr(&a, &b);
-	printf("\n");
-	printf("rrr\n");
+
+	rrb(&b, 1);
+	//rrb(&b, 1);
+	printf("------RESULT------\n");
 	printf("liste a\n");
-	printf("\n");
 	print_lst(&a);
+	printf("\n");
 	printf("liste b\n");
 	print_lst(&b);
-	node_size(&a);
-	node_size(&b);*/
 	return (0);
 }
 

@@ -20,7 +20,15 @@ void	pa(t_struct **a, t_struct **b)
 	{
 		temp = *b;
 		*b = (*b)->next;
-		temp->next = *a;
+		if (*b)
+			(*b)->prev = NULL;
+		if (*a)
+		{
+			temp->next = *a;
+			(*a)->prev = temp;
+		}
+		else
+			temp->next = NULL;
 		*a = temp;
 		ft_printf("pa\n");
 	}
@@ -34,7 +42,15 @@ void	pb(t_struct **a, t_struct **b)
 	{
 		temp = *a;
 		*a = (*a)->next;
-		temp->next = *b;
+		if (*a)
+			(*a)->prev = NULL;
+		if (*b)
+		{
+			temp->next = *b;
+			(*a)->prev = temp;
+		}
+		else
+			temp->next = NULL;
 		*b = temp;
 		ft_printf("pb\n");
 	}
