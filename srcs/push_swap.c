@@ -28,16 +28,18 @@ int	main(int arc, char **argv)
 
 	/*-------TESTERS------*/
 
-	pb(&a,&b);
+	/*pb(&a,&b);
 	pb(&a, &b);
 
+	rra(&a, 1);
+	rrb(&a, 1);
 	printf("liste a\n");
 	print_lst(&a);
-	printf("\n");
+	printf("\n");*/
 	printf("liste b\n");
 	print_lst(&b);
 
-	rrr(&a, &b);
+/*	rrr(&a, &b);
 	printf("\n");
 	printf("rrr\n");
 	printf("liste a\n");
@@ -46,7 +48,7 @@ int	main(int arc, char **argv)
 	printf("liste b\n");
 	print_lst(&b);
 	node_size(&a);
-	node_size(&b);
+	node_size(&b);*/
 	return (0);
 }
 

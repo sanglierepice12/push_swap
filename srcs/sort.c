@@ -12,7 +12,7 @@
 
 #include "../includes/push_swap.h"
 
-void	ranking(t_struct **stack)
+/*void	ranking(t_struct **stack)
 {
 	t_struct	*lst;
 	size_t		i;
@@ -38,4 +38,46 @@ void	ranking(t_struct **stack)
 		i++;
 		temp = temp_content;
 	}
+}*/
+void	ranking_to_minus(t_struct **temp)
+{
+	while ((*temp)->next)
+	{
+		(*temp)->rank = -1;
+		(*temp) = (*temp)->next;
+	}
+	(*temp)->rank = -1;
+	while ((*temp)->prev)
+		*temp = (*temp)->prev;
 }
+
+void	ranking(t_struct **a)
+{
+	t_struct	*temp;
+	t_struct	*doz;
+	int			i;
+
+	i = 0;
+	doz = *a;
+	ranking_to_minus(&temp);
+	while (temp->next)
+	{
+		temp = doz->next;
+		while (temp->next)
+		{
+			if (doz->content < temp->content && temp->rank == -1)
+				doz = temp;
+			temp->rank = i;
+			i++;
+			temp = temp->next;
+		}
+	}
+	while ((temp)->prev)
+		temp = (temp)->prev;
+	*a = temp;
+	print_lst(a);
+}
+
+
+// compter savoir combien d elements sont plus petit que mon index 0
+// bien calloc les nodes

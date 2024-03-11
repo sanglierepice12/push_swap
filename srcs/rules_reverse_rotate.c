@@ -18,11 +18,17 @@ void	rra(t_struct **a, int flag)
 
 	if (*a && (*a)->next)
 	{
-		temp = *a;
+		/*temp = ft_node_last(*a)->prev;
+		(*a) = temp->next;
+		temp->next = NULL;
+		while (temp->prev)
+			temp = temp->prev;
+		(*a)->next = temp;*/
+		temp = (*a);
 		while (temp->next->next)
 			temp = temp->next;
 		temp->next->next = (*a);
-		*a = temp->next;
+		(*a) = temp->next;
 		temp->next = NULL;
 		if (flag)
 			ft_printf("rra");

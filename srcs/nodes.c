@@ -56,7 +56,7 @@ t_struct	*ft_new_node(int content)
 		return (NULL);
 	new->content = content;
 	new->next = NULL;
-	/*new->prev = NULL;*/
+	new->prev = NULL;
 	return (new);
 }
 
@@ -80,9 +80,7 @@ void	ft_node_add_back(t_struct **head, t_struct *new)
 	{
 		last = ft_node_last(*head);
 		last->next = new;
-		/*new->prev = last;
-		new->prev->next = *head;
-		(*head)->prev = new;*/
+		new->prev = last;
 	}
 	else
 		*head = new;

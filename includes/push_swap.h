@@ -17,8 +17,9 @@
 #include <stdio.h>
 typedef	struct s_struct
 {
-	int		content;
-	int 	rank;
+	int				content;
+	int 			rank;
+	struct s_struct *prev;
 	struct s_struct *next;
 }	t_struct;
 
@@ -34,6 +35,7 @@ long		ft_atol(const char *nptr);
 
 //NODES
 t_struct	*ft_node_last(t_struct *head);
+t_struct	*ft_node_first(t_struct *head);
 t_struct	*ft_new_node(int content);
 void		ft_node_add_back(t_struct **lst, t_struct *new);
 void		print_lst(t_struct **head);
