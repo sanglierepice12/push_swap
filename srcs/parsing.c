@@ -38,6 +38,3 @@ t_struct	*ft_parse(char *str, t_struct	**a)
 	ft_free_tab(dest);
 	return (*a);
 }
-
-// algo
-// free all

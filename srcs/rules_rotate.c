@@ -18,8 +18,10 @@ void	ra(t_struct **a, int flag)
 
 	if (*a && (*a)->next)
 	{
+		// 1 2 3 4
 		temp = (*a);
 		*a = (*a)->next;
+		(*a)->prev = NULL;
 		temp->next = ft_node_last(*a)->next;
 		ft_node_add_back(a, temp);
 		if (flag == 1)
@@ -46,5 +48,5 @@ void	rr(t_struct **a, t_struct **b)
 {
 	ra(a, 0);
 	rb(b, 0);
-	ft_printf("rr");
+	ft_printf("rr\n");
 }

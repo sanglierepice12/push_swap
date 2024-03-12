@@ -33,5 +33,3 @@ void	ranking(t_struct **a)
 		doz = doz->next;
 	}
 }
-
-// bien calloc les nodes

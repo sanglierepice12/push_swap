@@ -80,18 +80,3 @@ void ft_check_all_is_numbers(char **tab)
 		i++;
 	}
 }
-/*
-int rank = 0
-a = int_min
-b = int_max
-
- on parcour, si i < b //it_min
-					b = i
-				i rank = 0;
-				a = b
-				b = int max
-				rank++;
-				si i < b et b > a          a vaut la valeur du  dernier rank trouve
-
-
- */

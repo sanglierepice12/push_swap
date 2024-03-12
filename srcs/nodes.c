@@ -25,28 +25,6 @@ void	free_lst(t_struct **head)
 	}
 }
 
-void	print_lst(t_struct **head)
-{
-	t_struct	*temp;
-	size_t	i;
-
-	i = 0;
-	if (*head)
-	{
-		temp = *head;
-		while (temp->next)
-		{
-			printf("Elem n'%zu: %d rank : %d\n", i, temp->content, temp->rank);
-			temp = temp->next;
-			i++;
-		}
-		printf("Elem n'%zu: %d rank : %d\n", i, temp->content, temp->rank);
-	}
-	else
-		ft_printf("empty list");
-	//free_lst(head);
-}
-
 t_struct	*ft_new_node(int content)
 {
 	t_struct	*new;
@@ -88,20 +66,4 @@ void	ft_node_add_front(t_struct **lst, t_struct *new)
 {
 	new->next = *lst;
 	*lst = new;
-}
-
-size_t	node_size(t_struct **a)
-{
-	t_struct	*temp;
-	size_t		i;
-
-	temp = (*a);
-	i = 0;
-	while (temp)
-	{
-		i++;
-		temp = temp->next;
-	}
-	printf("\ni = %zu\n", i);
-	return (i);
 }

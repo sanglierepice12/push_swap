@@ -34,20 +34,16 @@ void		ft_error(void);
 long		ft_atol(const char *nptr);
 
 //NODES
-t_struct	*ft_node_last(t_struct *head);
-t_struct	*ft_node_first(t_struct *head);
-t_struct	*ft_new_node(int content);
-void		ft_node_add_back(t_struct **lst, t_struct *new);
-void		print_lst(t_struct **head);
 void		free_lst(t_struct **head);
+t_struct	*ft_new_node(int content);
+t_struct	*ft_node_last(t_struct *head);
+void		ft_node_add_back(t_struct **lst, t_struct *new);
 void		ft_node_add_front(t_struct **lst, t_struct *new);
-size_t		node_size(t_struct **a);
 
 //check
 void		ft_search_space(char **str);
 void		check_double(t_struct **a);
 void		ft_check_all_is_numbers(char **tab);
-void		ft_double_fc(char **str);
 
 //RULES
 void		sa(t_struct **a, int flag);

@@ -47,7 +47,7 @@ void	pb(t_struct **a, t_struct **b)
 		if (*b)
 		{
 			temp->next = *b;
-			(*a)->prev = temp;
+			(*b)->prev = temp;
 		}
 		else
 			temp->next = NULL;
