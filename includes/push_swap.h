@@ -6,7 +6,7 @@
 /*   By: gsuter <gsuter@student.42lyon.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 17:07:12 by gsuter            #+#    #+#             */
-/*   Updated: 2024/03/08 11:21:19 by gostr            ###   ########.fr       */
+/*   Updated: 2024/03/13 14:53:29 by gostr            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,12 @@ typedef	struct s_struct
 	struct s_struct *prev;
 	struct s_struct *next;
 }	t_struct;
-
+void	print_lst(t_struct **head);
 //PARSING
 t_struct	*ft_parse_to_node(char **str, t_struct **a);
 t_struct	*ft_parse(char *str, t_struct	**a);
+
+
 
 //WRITE ERROR
 void		ft_error(void);
@@ -58,7 +60,7 @@ void		rra(t_struct **a, int flag);
 void		rrb(t_struct **b, int flag);
 void		rrr(t_struct **a, t_struct **b);
 
-//SORT
+//RANKING
 void		ranking(t_struct **stack);
 
 #endif
