@@ -20,30 +20,13 @@ int	main(int arc, char **argv)
 	a = NULL;
 	b = NULL;
 	if (arc < 2 || (arc == 2 && !argv[1][0]))
-		return (0);
+		return (EXIT_FAILURE);
 	if (arc == 2)
 		a = ft_parse(argv[1], &a);
 	else
 		a = ft_parse_to_node(argv + 1, &a);
-	printf("------BASE------\n");
-	printf("liste a\n");
-	print_lst(&a);
-	printf("\n");
-	printf("liste b\n");
-	print_lst(&b);
-
-	printf("------RESULT------\n");
-	printf("liste a\n");
-	print_lst(&a);
-	printf("\n");
-	printf("liste b\n");
-	print_lst(&b);
-
-	//free *a
-	// exit(1);
-	//struct s_list
-	// ft_lstclear((a, free);
-    return (0);
+	ft_is_sort(&a, &b);
+    return (EXIT_SUCCESS);
 }
 
 /*//check si a est sorted ou pas
@@ -54,3 +37,17 @@ int	main(int arc, char **argv)
 //				do what you have to do brow
 // check si plus ducoup turckish*/
 /*-------TESTERS------*/
+/*
+printf("------BASE------\n");
+printf("liste a\n");
+print_lst(&a);
+printf("\n");
+printf("liste b\n");
+print_lst(&b);
+
+printf("------RESULT------\n");
+printf("liste a\n");
+print_lst(&a);
+printf("\n");
+printf("liste b\n");
+print_lst(&b);*/

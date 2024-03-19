@@ -18,12 +18,32 @@ void	free_lst(t_struct **head)
 
 	while (*head)
 	{
+		printf("free %d\n", (*head)->content);
 		temp = (*head)->next;
 		(*head)->content = 0;
 		free(*head);
 		*head = temp;
 	}
 }
+
+/*void	ft_node_delone(t_struct *lst)
+{
+	lst->content = 0;
+	free(lst);
+}
+
+void	free_lst(t_struct **lst)
+{
+	t_struct	*temp;
+
+	while (*lst)
+	{
+		temp = ((*lst)->next);
+		ft_node_delone(*lst);
+		*lst = temp;
+	}
+}*/
+
 
 t_struct	*ft_new_node(int content)
 {

@@ -33,3 +33,18 @@ void	ranking(t_struct **a)
 		doz = doz->next;
 	}
 }
+
+int	ft_node_size(t_struct **a)
+{
+	t_struct	*temp;
+	int			i;
+
+	i = 0;
+	temp = *a;
+	while(temp)
+	{
+		temp = temp->next;
+		i++;
+	}
+	return (i);
+}

@@ -27,7 +27,15 @@ void	print_lst(t_struct **head);
 t_struct	*ft_parse_to_node(char **str, t_struct **a);
 t_struct	*ft_parse(char *str, t_struct	**a);
 
+//SORT
+int			ft_find_next(t_struct **a, int min, int max);
+void		ft_search_interval(t_struct **a, t_struct **b, int min, int max);
+void		big_sort(t_struct **a, t_struct **b, int len);
+void		ft_is_sort(t_struct **a, t_struct **b);
 
+//IS_SORTED
+int			is_sorted(t_struct **a);
+void		three_sorted(t_struct **a, t_struct **b);
 
 //WRITE ERROR
 void		ft_error(void);
@@ -42,7 +50,7 @@ t_struct	*ft_node_last(t_struct *head);
 void		ft_node_add_back(t_struct **lst, t_struct *new);
 void		ft_node_add_front(t_struct **lst, t_struct *new);
 
-//check
+//CHECK
 void		ft_search_space(char **str);
 void		check_double(t_struct **a);
 void		ft_check_all_is_numbers(char **tab);
@@ -62,5 +70,6 @@ void		rrr(t_struct **a, t_struct **b);
 
 //RANKING
 void		ranking(t_struct **stack);
+int			ft_node_size(t_struct **a);
 
 #endif
