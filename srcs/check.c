@@ -24,12 +24,12 @@ void	ft_search_space(char **str)
 		while (str[i][j])
 		{
 			if (str[i][j] != 32)
-				return;
+				return ;
 			j++;
 		}
 		i++;
 	}
-	ft_error();
+	ft_error(NULL);
 }
 
 void	check_double(t_struct **a)
@@ -38,17 +38,17 @@ void	check_double(t_struct **a)
 	t_struct	*doz;
 
 	if (!(*a)->next || !(*a))
-		return;
+		return ;
 	else
 	{
 		doz = *a;
-		while(doz->next)
+		while (doz->next)
 		{
 			temp = doz->next;
 			while (temp)
 			{
 				if (temp->content == doz->content)
-					ft_error();
+					ft_error(a);
 				temp = temp->next;
 			}
 			doz = doz->next;
@@ -56,7 +56,7 @@ void	check_double(t_struct **a)
 	}
 }
 
-void ft_check_all_is_numbers(char **tab)
+void	ft_check_all_is_numbers(char **tab)
 {
 	size_t	i;
 	size_t	j;
@@ -68,15 +68,15 @@ void ft_check_all_is_numbers(char **tab)
 		if (tab[i][j + 1] && (tab[i][j] == '-' || tab[i][j] == '+'))
 			j++;
 		if (ft_strlen(tab[i]) > 11)
-			ft_error();
+			ft_error(NULL);
 		while (tab[i][j])
 		{
 			if (!ft_isdigit(tab[i][j]))
-				return (ft_error());
+				return (ft_error(NULL));
 			j++;
 		}
 		if (ft_atoi(tab[i]) != ft_atol(tab[i]))
-			return (ft_error());
+			return (ft_error(NULL));
 		i++;
 	}
 }

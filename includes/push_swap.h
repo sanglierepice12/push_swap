@@ -35,10 +35,11 @@ void		ft_is_sort(t_struct **a, t_struct **b);
 
 //IS_SORTED
 int			is_sorted(t_struct **a);
-void		three_sorted(t_struct **a, t_struct **b);
+void		three_sorted(t_struct **a);
+void		five_less_sort(t_struct **a, t_struct **b);
 
 //WRITE ERROR
-void		ft_error(void);
+void		ft_error(t_struct **a);
 
 //ATOL
 long		ft_atol(const char *nptr);

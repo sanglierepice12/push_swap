@@ -18,7 +18,6 @@ void	ra(t_struct **a, int flag)
 
 	if (*a && (*a)->next)
 	{
-		// 1 2 3 4
 		temp = (*a);
 		*a = (*a)->next;
 		(*a)->prev = NULL;

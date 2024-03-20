@@ -26,18 +26,59 @@ int	is_sorted(t_struct **a)
 	return (0);
 }
 
-void	three_sorted(t_struct **a, t_struct **b)
+void	three_follow(t_struct **a, int x, int y, int z)
 {
-	pb(a,b);
-	if (is_sorted(a))
-		pa(a,b);
-	else
+	if (x > y && y < z && x < z)
+		sa(a, 1);
+	else if (x > y && y < z && x > z)
+		ra(a, 1);
+}
+
+void	three_sorted(t_struct **a)
+{
+	int	x;
+	int	y;
+	int	z;
+
+	x = (*a)->content;
+	y = (*a)->next->content;
+	z = (*a)->next->next->content;
+	if (x < y && y > z && x < z)
+	{
+		rra(a, 1);
+		sa(a, 1);
+	}
+	else if (x > y && y > z)
 	{
 		ra(a, 1);
-		pa(a, b);
+		sa(a, 1);
 	}
-	/*if (is_sorted(a))
-		free_lst(a);
+	else if (x < y && y > z && x > z)
+		rra(a, 1);
 	else
-		while ((*a)->rank > (*a)->next->rank)*/
+		three_follow(a, x, y, z);
+}
+
+void	five_less_sort(t_struct **a, t_struct **b)
+{
+	int	size;
+	int	i;
+
+	i = 0;
+	size = ft_node_size(a);
+	while (i < size)
+	{
+		if ((*a)->rank == 0 || ((*a)->rank == 1 && size == 5))
+			pb(a, b);
+		else
+			ra(a, 1);
+		i++;
+	}
+	while ((*a)->prev)
+		(*a) = (*a)->prev;
+	three_sorted(a);
+	if (size == 5 && is_sorted(b))
+		sa(b, 1);
+	while (*b)
+		pa(a, b);
 }

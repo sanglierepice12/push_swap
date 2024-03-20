@@ -12,11 +12,10 @@
 
 #include "../includes/push_swap.h"
 
-void	ft_error(void)
+void	ft_error(t_struct **a)
 {
+	if (a)
+		free_lst(a);
 	ft_putstr_fd("Error\n", 2);
-	exit(1);
+	exit(EXIT_FAILURE);
 }
-
-//free str
-//free list

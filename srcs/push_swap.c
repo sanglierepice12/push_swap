@@ -26,16 +26,10 @@ int	main(int arc, char **argv)
 	else
 		a = ft_parse_to_node(argv + 1, &a);
 	ft_is_sort(&a, &b);
-    return (EXIT_SUCCESS);
+	free_lst(&a);
+	return (EXIT_SUCCESS);
 }
 
-/*//check si a est sorted ou pas
-// si non -> check si = 2
-// 				then swap a
-// check si = 3
-// 				check biggest nb at the top / middle / bot
-//				do what you have to do brow
-// check si plus ducoup turckish*/
 /*-------TESTERS------*/
 /*
 printf("------BASE------\n");

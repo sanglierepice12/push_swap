@@ -41,7 +41,7 @@ int	ft_node_size(t_struct **a)
 
 	i = 0;
 	temp = *a;
-	while(temp)
+	while (temp)
 	{
 		temp = temp->next;
 		i++;

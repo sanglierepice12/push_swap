@@ -19,6 +19,7 @@ void	sa(t_struct **a, int flag)
 	if (*a && (*a)->next)
 	{
 		temp = (*a)->next;
+		temp->prev = NULL;
 		(*a)->next = temp->next;
 		temp->next = *a;
 		*a = temp;
@@ -34,6 +35,7 @@ void	sb(t_struct **b, int flag)
 	if ((*b) && (*b)->next)
 	{
 		temp = (*b)->next;
+		temp->prev = NULL;
 		(*b)->next = temp->next;
 		temp->next = *b;
 		*b = temp;

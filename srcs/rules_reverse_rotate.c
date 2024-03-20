@@ -24,12 +24,12 @@ void	rra(t_struct **a, int flag)
 		while (temp->prev)
 			temp = temp->prev;
 		(*a)->next = temp;
+		temp->prev = (*a);
 		(*a)->prev = NULL;
 		if (flag)
 			ft_printf("rra\n");
 	}
 }
-
 
 void	rrb(t_struct **b, int flag)
 {
@@ -43,6 +43,7 @@ void	rrb(t_struct **b, int flag)
 		while (temp->prev)
 			temp = temp->prev;
 		(*b)->next = temp;
+		temp->prev = (*b);
 		(*b)->prev = NULL;
 		if (flag)
 			ft_printf("rrb\n");
